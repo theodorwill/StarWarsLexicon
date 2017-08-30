@@ -52,9 +52,9 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Se
 
     @Override
     public void onBindViewHolder(SearchViewHolder holder, final int position) {
-        holder.name.setText(results.get(position).getName());
-        holder.hairColor.setText(results.get(position).getHairColor());
-        holder.eyeColor.setText(results.get(position).getEyeColor());
+        holder.name.setText("Name: "+results.get(position).getName());
+        holder.hairColor.setText("Hair color: "+results.get(position).getHairColor());
+        holder.eyeColor.setText("Eye color: "+results.get(position).getEyeColor());
     }
 
     @Override

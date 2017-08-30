@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.List;
@@ -32,32 +35,42 @@ import starwars.app.starwarslexicon.model.Result;
 
 public class SearchFragment extends Fragment {
 
-    private static final String searchUrl = "/people/?search=";
-    private String searchResult = "Luke";
-    private RecyclerView mRecyclerView;
-    private Adapter mAdapter;
-    private LinearLayoutManager mLayoutManager;
-
-
-
-
-
+    private static final String searchUrl = "people/?search=";
+    private String searchResult = "";
+    private RecyclerView rv;
+    private EditText searchField;
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
-        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.searchRecyclerView);
-        mLayoutManager = new LinearLayoutManager(this.getActivity());
-        fetchSearchResults();
+        rv = (RecyclerView)rootView.findViewById(R.id.searchRecyclerView);
+        rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        searchField = (EditText)rootView.findViewById(R.id.textSearchBar);
 
+        searchField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                searchResult = searchField.getText().toString();
+                fetchSearchResults();
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                searchResult = searchField.getText().toString();
+                fetchSearchResults();
+            }
+        });
         return rootView;
 
     }
 
     public void fetchSearchResults(){
-
-        mRecyclerView.setLayoutManager(mLayoutManager);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://swapi.co/api/")
@@ -66,20 +79,15 @@ public class SearchFragment extends Fragment {
 
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
 
-        Call<Example> call = apiInterface.getSearchResult("people/1/");
+        Call<Example> call = apiInterface.getSearchResult(searchUrl+searchResult);
         call.enqueue(new Callback<Example>() {
-
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                if (response.isSuccessful()){
-                    int responseCode = response.code();
-                    List<Result> results = response.body().getResults();
-                    mRecyclerView.setAdapter(new SearchListAdapter(results,R.layout.fragment_search_item, getActivity()));
+                int statusCode = response.code();
+                List<Result> results = response.body().getResults();
+                rv.setAdapter(new SearchListAdapter(results, R.layout.fragment_search_item, getContext()));
 
-
-
-
-                }
+                Log.d("responseCall", "onResponse" + statusCode);
             }
 
             @Override
@@ -87,9 +95,6 @@ public class SearchFragment extends Fragment {
 
             }
         });
-
-
-
     }
 
 
