@@ -17,7 +17,7 @@ import starwars.app.starwarslexicon.model.Result;
  * Created by cba on 2017-08-28.
  */
 
-public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.SearchViewHolder> {
+public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchViewHolder> {
 
     private List<Result> results;
     private int rowLayout;
@@ -26,26 +26,36 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Se
     public class SearchViewHolder extends RecyclerView.ViewHolder {
         LinearLayout searchLayout;
         TextView name;
+        TextView height;
+        TextView mass;
         TextView hairColor;
+        TextView skinColor;
         TextView eyeColor;
+        TextView birthYear;
+        TextView gender;
 
         public SearchViewHolder(View searchView) {
             super(searchView);
             searchLayout = (LinearLayout) searchView.findViewById(R.id.searchLayout);
-            name = (TextView) searchView.findViewById(R.id.name);
-            hairColor = (TextView) searchView.findViewById(R.id.hairColor);
-            eyeColor = (TextView) searchView.findViewById(R.id.eyeColor);
+            name = (TextView)searchView.findViewById(R.id.name);
+            height = (TextView)searchView.findViewById(R.id.height);
+            mass = (TextView)searchView.findViewById(R.id.mass);
+            hairColor = (TextView)searchView.findViewById(R.id.hairColor);
+            skinColor = (TextView)searchView.findViewById(R.id.skinColor);
+            eyeColor = (TextView)searchView.findViewById(R.id.eyeColor);
+            birthYear = (TextView)searchView.findViewById(R.id.birthYear);
+            gender = (TextView)searchView.findViewById(R.id.gender);
         }
     }
 
-    public SearchListAdapter(List<Result> results, int rowLayout, Context context) {
+    public PeopleAdapter(List<Result> results, int rowLayout, Context context) {
         this.results = results;
         this.rowLayout = rowLayout;
         this.context = context;
     }
 
     @Override
-    public SearchListAdapter.SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PeopleAdapter.SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
         return new SearchViewHolder(view);
     }
@@ -53,8 +63,13 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Se
     @Override
     public void onBindViewHolder(SearchViewHolder holder, final int position) {
         holder.name.setText("Name: "+results.get(position).getName());
+        holder.height.setText("Height: "+results.get(position).getHeight());
+        holder.mass.setText("Mass: "+results.get(position).getMass());
         holder.hairColor.setText("Hair color: "+results.get(position).getHairColor());
+        holder.skinColor.setText("Skin color: "+results.get(position).getSkinColor());
         holder.eyeColor.setText("Eye color: "+results.get(position).getEyeColor());
+        holder.birthYear.setText("Birth year: "+results.get(position).getBirthYear());
+        holder.gender.setText("Gender: "+results.get(position).getGender());
     }
 
     @Override

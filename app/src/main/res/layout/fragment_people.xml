@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121">
 
+    <EditText
+        android:id="@+id/textSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:maxLines="1"
+        android:hint="Search..."
+        android:inputType="text"
+        android:textColorHint="#eeeeee"
+        android:textColor="#eeeeee"
+        android:background="#212121"
+        android:textColorHighlight="#eeeeee"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/searchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginTop="50dp"
+        android:background="#212121"/>
 
 </FrameLayout>

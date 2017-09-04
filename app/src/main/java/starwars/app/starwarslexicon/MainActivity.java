@@ -7,28 +7,13 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import starwars.app.starwarslexicon.Adapters.SearchListAdapter;
-import starwars.app.starwarslexicon.api.ApiInterface;
-import starwars.app.starwarslexicon.fragments.PeopleFragment;
 import starwars.app.starwarslexicon.fragments.PlanetsFragment;
-import starwars.app.starwarslexicon.fragments.SearchFragment;
+import starwars.app.starwarslexicon.fragments.PeopleFragment;
 import starwars.app.starwarslexicon.fragments.ShipsFragment;
-import starwars.app.starwarslexicon.model.Example;
-import starwars.app.starwarslexicon.model.Result;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().replace(R.id.contentFrame, new SearchFragment()).commit();
+        fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
     }
 
     @Override
@@ -90,9 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fm = getFragmentManager();
         int id = item.getItemId();
 
-        if (id == R.id.nav_search) {
-            fm.beginTransaction().replace(R.id.contentFrame, new SearchFragment()).commit();
-        } else if (id == R.id.nav_people) {
+        if (id == R.id.nav_people) {
             fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
         } else if (id == R.id.nav_planets) {
             fm.beginTransaction().replace(R.id.contentFrame, new PlanetsFragment()).commit();
