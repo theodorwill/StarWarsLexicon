@@ -58,6 +58,33 @@ public class Result {
     @SerializedName("url")
     @Expose
     private String url;
+    @SerializedName("rotation_period")
+    @Expose
+    private String rotationPeriod;
+    @SerializedName("orbital_period")
+    @Expose
+    private String orbitalPeriod;
+    @SerializedName("diameter")
+    @Expose
+    private String diameter;
+    @SerializedName("climate")
+    @Expose
+    private String climate;
+    @SerializedName("gravity")
+    @Expose
+    private String gravity;
+    @SerializedName("terrain")
+    @Expose
+    private String terrain;
+    @SerializedName("surface_water")
+    @Expose
+    private String surfaceWater;
+    @SerializedName("population")
+    @Expose
+    private String population;
+    @SerializedName("residents")
+    @Expose
+    private List<String> residents = null;
 
     public String getName() {
         return name;
@@ -187,4 +214,75 @@ public class Result {
         this.url = url;
     }
 
+    public String getRotationPeriod() {
+        return rotationPeriod;
+    }
+
+    public void setRotationPeriod(String rotationPeriod) {
+        this.rotationPeriod = rotationPeriod;
+    }
+
+    public String getOrbitalPeriod() {
+        return orbitalPeriod;
+    }
+
+    public void setOrbitalPeriod(String orbitalPeriod) {
+        this.orbitalPeriod = orbitalPeriod;
+    }
+
+    public String getDiameter() {
+        return diameter;
+    }
+
+    public void setDiameter(String diameter) {
+        this.diameter = diameter;
+    }
+
+    public String getClimate() {
+        return climate;
+    }
+
+    public void setClimate(String climate) {
+        this.climate = climate;
+    }
+
+    public String getGravity() {
+        return gravity;
+    }
+
+    public void setGravity(String gravity) {
+        this.gravity = gravity;
+    }
+
+    public String getTerrain() {
+        return terrain;
+    }
+
+    public void setTerrain(String terrain) {
+        this.terrain = terrain;
+    }
+
+    public String getSurfaceWater() {
+        return surfaceWater;
+    }
+
+    public void setSurfaceWater(String surfaceWater) {
+        this.surfaceWater = surfaceWater;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
+    }
+
+    public List<String> getResidents() {
+        return residents;
+    }
+
+    public void setResidents(List<String> residents) {
+        this.residents = residents;
+    }
 }

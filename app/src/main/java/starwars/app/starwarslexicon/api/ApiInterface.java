@@ -14,6 +14,4 @@ public interface ApiInterface {
     @GET
     Call<Example> getSearchResult(@Url String url);
 
-    @GET
-    Call<Result> getSpecificResult(@Url String url);
 }

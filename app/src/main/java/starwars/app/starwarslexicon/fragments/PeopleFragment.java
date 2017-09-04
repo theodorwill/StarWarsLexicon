@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -74,14 +76,15 @@ public class PeopleFragment extends Fragment {
         call.enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-
-                List<Result> results = response.body().getResults();
-                rv.setAdapter(new PeopleAdapter(results, R.layout.fragment_people_item, getContext()));
+                if(response.isSuccessful()) {
+                    List<Result> results = response.body().getResults();
+                    rv.setAdapter(new PeopleAdapter(results, R.layout.fragment_people_item, getContext()));
+                }
             }
 
             @Override
             public void onFailure(Call<Example> call, Throwable t) {
-
+                Toast.makeText(getActivity(), "API call failed", Toast.LENGTH_SHORT).show();
             }
         });
     }

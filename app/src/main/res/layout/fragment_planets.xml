@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Planets Layout"
-        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/planetSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:maxLines="1"
+        android:hint="Search..."
+        android:inputType="text"
+        android:textColorHint="#eeeeee"
+        android:textColor="#eeeeee"
+        android:background="#212121"
+        android:textColorHighlight="#eeeeee"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/planetRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginTop="50dp"
+        android:background="#212121"/>
+
 </FrameLayout>
