@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon.model;
+package starwars.app.starwarsse.model;
 
 /**
  * Created by cba on 2017-08-28.

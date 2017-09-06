@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon;
+package starwars.app.starwarsse;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import starwars.app.starwarslexicon.fragments.PlanetsFragment;
-import starwars.app.starwarslexicon.fragments.PeopleFragment;
-import starwars.app.starwarslexicon.fragments.ShipsFragment;
+import starwars.app.starwarsse.fragments.PlanetsFragment;
+import starwars.app.starwarsse.fragments.PeopleFragment;
+import starwars.app.starwarsse.fragments.ShipsFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

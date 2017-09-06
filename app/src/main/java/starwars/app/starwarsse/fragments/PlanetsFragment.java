@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon.fragments;
+package starwars.app.starwarsse.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -20,12 +20,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import starwars.app.starwarslexicon.Adapters.PeopleAdapter;
-import starwars.app.starwarslexicon.Adapters.PlanetsAdapter;
-import starwars.app.starwarslexicon.R;
-import starwars.app.starwarslexicon.api.ApiInterface;
-import starwars.app.starwarslexicon.model.Example;
-import starwars.app.starwarslexicon.model.Result;
+import starwars.app.starwarsse.Adapters.PlanetsAdapter;
+import starwars.app.starwarsse.R;
+import starwars.app.starwarsse.api.ApiInterface;
+import starwars.app.starwarsse.model.Example;
+import starwars.app.starwarsse.model.Result;
 
 /**
  * Created by cba on 2017-08-28.

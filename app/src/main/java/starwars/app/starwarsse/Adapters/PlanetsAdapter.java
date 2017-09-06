@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon.Adapters;
+package starwars.app.starwarsse.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import starwars.app.starwarslexicon.R;
-import starwars.app.starwarslexicon.model.Result;
+import starwars.app.starwarsse.R;
+import starwars.app.starwarsse.model.Result;
 
 /**
  * Created by cba on 2017-09-04.

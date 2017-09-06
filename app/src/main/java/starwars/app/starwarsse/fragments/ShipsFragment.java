@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon.fragments;
+package starwars.app.starwarsse.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import starwars.app.starwarslexicon.R;
+import starwars.app.starwarsse.R;
 
 /**
  * Created by cba on 2017-08-28.

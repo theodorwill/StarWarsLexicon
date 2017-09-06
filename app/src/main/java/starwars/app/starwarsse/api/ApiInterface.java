@@ -1,10 +1,9 @@
-package starwars.app.starwarslexicon.api;
+package starwars.app.starwarsse.api;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Url;
-import starwars.app.starwarslexicon.model.Example;
-import starwars.app.starwarslexicon.model.Result;
+import starwars.app.starwarsse.model.Example;
 
 /**
  * Created by cba on 2017-08-28.

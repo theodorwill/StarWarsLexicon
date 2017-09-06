@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon;
+package starwars.app.starwarsse;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

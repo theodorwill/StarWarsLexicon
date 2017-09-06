@@ -1,4 +1,4 @@
-package starwars.app.starwarslexicon;
+package starwars.app.starwarsse;
 
 import org.junit.Test;
 
