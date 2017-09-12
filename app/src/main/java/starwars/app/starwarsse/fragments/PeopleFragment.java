@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public class PeopleFragment extends Fragment {
     private String searchResult = "";
     private RecyclerView rv;
     private EditText searchField;
+    private ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class PeopleFragment extends Fragment {
 
         rv = (RecyclerView)rootView.findViewById(R.id.searchRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        progressBar = (ProgressBar)rootView.findViewById(R.id.progressBar);
+        fetchSearchResults();
 
         searchField = (EditText)rootView.findViewById(R.id.textSearchBar);
         searchField.addTextChangedListener(new TextWatcher() {
@@ -66,6 +70,8 @@ public class PeopleFragment extends Fragment {
 
     public void fetchSearchResults(){
 
+        progressBar.setVisibility(View.VISIBLE);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://swapi.co/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -80,12 +86,14 @@ public class PeopleFragment extends Fragment {
                 if(response.isSuccessful()) {
                     List<Result> results = response.body().getResults();
                     rv.setAdapter(new PeopleAdapter(results, R.layout.fragment_people_item, getContext()));
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<Example> call, Throwable t) {
                 Toast.makeText(getActivity(), "API call failed", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
