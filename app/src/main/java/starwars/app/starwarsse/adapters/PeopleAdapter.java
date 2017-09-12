@@ -26,15 +26,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
 
     public class SearchViewHolder extends RecyclerView.ViewHolder {
         LinearLayout searchLayout;
-        TextView name;
-        TextView height;
-        TextView mass;
-        TextView hairColor;
-        TextView skinColor;
-        TextView eyeColor;
-        TextView birthYear;
-        TextView gender;
-        Typeface typeFace;
+        TextView name, height, mass, hairColor, skinColor, eyeColor, birthYear, gender;
 
         public SearchViewHolder(View searchView) {
             super(searchView);
@@ -47,10 +39,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
             eyeColor = (TextView)searchView.findViewById(R.id.eyeColor);
             birthYear = (TextView)searchView.findViewById(R.id.birthYear);
             gender = (TextView)searchView.findViewById(R.id.gender);
-            typeFace = Typeface.createFromAsset(searchView
-                    .getContext().getAssets(), "fonts/StarCustom.ttf");
-            name.setTypeface(typeFace);
-
         }
     }
 

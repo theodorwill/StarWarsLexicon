@@ -26,16 +26,8 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.PlanetsV
 
     public class PlanetsViewHolder extends RecyclerView.ViewHolder{
         LinearLayout planetsLayout;
-        TextView planetName;
-        TextView rotPeriod;
-        TextView orbPeriod;
-        TextView diameter;
-        TextView climate;
-        TextView gravity;
-        TextView terrain;
-        TextView surfWater;
-        TextView population;
-        Typeface planetTypeFace;
+        TextView planetName, rotPeriod, orbPeriod, diameter, climate,
+                gravity, terrain, surfWater, population;
 
         public PlanetsViewHolder(View planetsView){
             super(planetsView);
@@ -49,9 +41,6 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.PlanetsV
             terrain = (TextView)planetsView.findViewById(R.id.terrain);
             surfWater = (TextView)planetsView.findViewById(R.id.surfaceWater);
             population = (TextView)planetsView.findViewById(R.id.population);
-            planetTypeFace = Typeface.createFromAsset(planetsView
-                    .getContext().getAssets(), "fonts/StarCustom.ttf");
-            planetName.setTypeface(planetTypeFace);
         }
     }
 

@@ -37,7 +37,6 @@ public class PlanetsFragment extends Fragment {
     private RecyclerView rv;
     private EditText searchField;
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_planets, container, false);

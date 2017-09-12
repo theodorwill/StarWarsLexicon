@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:planet_card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/planetsLayout"
+    android:id="@+id/speciesLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
@@ -10,7 +10,7 @@
     android:background="#212121">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/planet_card_view"
+        android:id="@+id/species_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,63 +26,70 @@
             android:padding="10dp">
 
             <starwars.app.starwarsse.resources.CustomTextView
-                android:id="@+id/planetName"
+                android:id="@+id/speciesName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textColor="#ffeb3b"/>
 
             <TextView
-                android:id="@+id/rotPeriod"
+                android:id="@+id/classification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/orbPeriod"
+                android:id="@+id/designation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/diameter"
+                android:id="@+id/avgHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/climate"
+                android:id="@+id/speciesSkinColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/gravity"
+                android:id="@+id/speciesHairColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/terrain"
+                android:id="@+id/speciesEyeColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/surfaceWater"
+                android:id="@+id/avgLifespan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="#eeeeee"/>
 
             <TextView
-                android:id="@+id/population"
+                android:id="@+id/homeWorld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/language"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
