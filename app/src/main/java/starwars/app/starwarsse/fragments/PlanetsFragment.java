@@ -20,7 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import starwars.app.starwarsse.Adapters.PlanetsAdapter;
+import starwars.app.starwarsse.adapters.PlanetsAdapter;
 import starwars.app.starwarsse.R;
 import starwars.app.starwarsse.api.ApiInterface;
 import starwars.app.starwarsse.model.Example;

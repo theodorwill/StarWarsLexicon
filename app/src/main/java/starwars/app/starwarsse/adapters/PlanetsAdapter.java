@@ -1,6 +1,7 @@
-package starwars.app.starwarsse.Adapters;
+package starwars.app.starwarsse.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,7 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.PlanetsV
         TextView terrain;
         TextView surfWater;
         TextView population;
+        Typeface planetTypeFace;
 
         public PlanetsViewHolder(View planetsView){
             super(planetsView);
@@ -47,6 +49,9 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.PlanetsV
             terrain = (TextView)planetsView.findViewById(R.id.terrain);
             surfWater = (TextView)planetsView.findViewById(R.id.surfaceWater);
             population = (TextView)planetsView.findViewById(R.id.population);
+            planetTypeFace = Typeface.createFromAsset(planetsView
+                    .getContext().getAssets(), "fonts/StarCustom.ttf");
+            planetName.setTypeface(planetTypeFace);
         }
     }
 
@@ -64,7 +69,7 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.PlanetsV
 
     @Override
     public void onBindViewHolder(PlanetsAdapter.PlanetsViewHolder holder, int position) {
-        holder.planetName.setText("Name: "+results.get(position).getName());
+        holder.planetName.setText(results.get(position).getName());
         holder.rotPeriod.setText("Rotation period: "+results.get(position).getRotationPeriod());
         holder.orbPeriod.setText("Orbital period: "+results.get(position).getOrbitalPeriod());
         holder.diameter.setText("Diameter: "+results.get(position).getDiameter());

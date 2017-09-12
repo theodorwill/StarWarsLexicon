@@ -18,7 +18,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import starwars.app.starwarsse.Adapters.PeopleAdapter;
+import starwars.app.starwarsse.adapters.PeopleAdapter;
 import starwars.app.starwarsse.R;
 import starwars.app.starwarsse.api.ApiInterface;
 import starwars.app.starwarsse.model.Example;

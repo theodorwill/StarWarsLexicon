@@ -29,9 +29,8 @@
                 android:id="@+id/planetName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textSize="25sp"
+                android:textColor="#ffeb3b"/>
 
             <TextView
                 android:id="@+id/rotPeriod"

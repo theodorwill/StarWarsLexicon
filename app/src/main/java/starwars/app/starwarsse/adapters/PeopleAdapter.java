@@ -1,6 +1,7 @@
-package starwars.app.starwarsse.Adapters;
+package starwars.app.starwarsse.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
         TextView eyeColor;
         TextView birthYear;
         TextView gender;
+        Typeface typeFace;
 
         public SearchViewHolder(View searchView) {
             super(searchView);
@@ -45,6 +47,10 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
             eyeColor = (TextView)searchView.findViewById(R.id.eyeColor);
             birthYear = (TextView)searchView.findViewById(R.id.birthYear);
             gender = (TextView)searchView.findViewById(R.id.gender);
+            typeFace = Typeface.createFromAsset(searchView
+                    .getContext().getAssets(), "fonts/StarCustom.ttf");
+            name.setTypeface(typeFace);
+
         }
     }
 
@@ -62,7 +68,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
 
     @Override
     public void onBindViewHolder(SearchViewHolder holder, final int position) {
-        holder.name.setText("Name: "+results.get(position).getName());
+        holder.name.setText(results.get(position).getName());
         holder.height.setText("Height: "+results.get(position).getHeight());
         holder.mass.setText("Mass: "+results.get(position).getMass());
         holder.hairColor.setText("Hair color: "+results.get(position).getHairColor());
@@ -70,6 +76,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
         holder.eyeColor.setText("Eye color: "+results.get(position).getEyeColor());
         holder.birthYear.setText("Birth year: "+results.get(position).getBirthYear());
         holder.gender.setText("Gender: "+results.get(position).getGender());
+
     }
 
     @Override
