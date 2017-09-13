@@ -13,9 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -87,7 +85,7 @@ public class PlanetsFragment extends Fragment {
             public void onResponse(Call<Example> call, Response<Example> response) {
                 if(response.isSuccessful()) {
                     List<Result> results = response.body().getResults();
-                    rv.setAdapter(new PlanetsAdapter(results, R.layout.fragment_planets_item, getContext()));
+                    rv.setAdapter(new PlanetsAdapter(results, R.layout.fragment_planets_item));
                     progressBar.setVisibility(View.GONE);
                 }
             }

@@ -1,16 +1,13 @@
 package starwars.app.starwarsse.adapters;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.List;
-
 import starwars.app.starwarsse.R;
 import starwars.app.starwarsse.model.Result;
 
@@ -22,7 +19,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
 
     private List<Result> results;
     private int rowLayout;
-    private Context context;
 
     public class SearchViewHolder extends RecyclerView.ViewHolder {
         LinearLayout searchLayout;
@@ -42,10 +38,10 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
         }
     }
 
-    public PeopleAdapter(List<Result> results, int rowLayout, Context context) {
+    public PeopleAdapter(List<Result> results, int rowLayout) {
         this.results = results;
         this.rowLayout = rowLayout;
-        this.context = context;
+
     }
 
     @Override

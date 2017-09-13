@@ -7,11 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
-
 import starwars.app.starwarsse.R;
 import starwars.app.starwarsse.model.Result;
 
@@ -23,7 +19,6 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ShipsViewHol
 
     private List<Result> results;
     private int rowLayout;
-    private Context context;
 
     public class ShipsViewHolder extends RecyclerView.ViewHolder{
         LinearLayout shipsLayout;
@@ -49,10 +44,9 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ShipsViewHol
         }
     }
 
-    public ShipsAdapter(List<Result> results, int rowLayout, Context context){
+    public ShipsAdapter(List<Result> results, int rowLayout){
         this.results = results;
         this.rowLayout = rowLayout;
-        this.context = context;
     }
 
     @Override

@@ -13,16 +13,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import starwars.app.starwarsse.R;
-import starwars.app.starwarsse.adapters.ShipsAdapter;
 import starwars.app.starwarsse.adapters.SpeciesAdapter;
 import starwars.app.starwarsse.api.ApiInterface;
 import starwars.app.starwarsse.model.Example;
@@ -87,7 +84,7 @@ public class SpeciesFragment extends Fragment {
             public void onResponse(Call<Example> call, Response<Example> response) {
                 if(response.isSuccessful()) {
                     List<Result> results = response.body().getResults();
-                    rv.setAdapter(new SpeciesAdapter(results, R.layout.fragment_species_item, getContext()));
+                    rv.setAdapter(new SpeciesAdapter(results, R.layout.fragment_species_item));
                     progressBar.setVisibility(View.GONE);
                 }
             }

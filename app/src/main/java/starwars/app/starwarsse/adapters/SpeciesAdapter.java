@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.List;
-
 import starwars.app.starwarsse.R;
 import starwars.app.starwarsse.model.Result;
 
@@ -21,7 +19,6 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
 
     private List<Result> results;
     private int rowLayout;
-    private Context context;
 
     public class SpeciesViewHolder extends RecyclerView.ViewHolder{
         LinearLayout speciesLayout;
@@ -44,10 +41,9 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
         }
     }
 
-    public SpeciesAdapter(List<Result> results, int rowLayout, Context context){
+    public SpeciesAdapter(List<Result> results, int rowLayout){
         this.results = results;
         this.rowLayout = rowLayout;
-        this.context = context;
     }
 
     @Override

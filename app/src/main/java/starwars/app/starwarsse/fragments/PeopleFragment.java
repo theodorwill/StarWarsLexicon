@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -85,7 +84,7 @@ public class PeopleFragment extends Fragment {
             public void onResponse(Call<Example> call, Response<Example> response) {
                 if(response.isSuccessful()) {
                     List<Result> results = response.body().getResults();
-                    rv.setAdapter(new PeopleAdapter(results, R.layout.fragment_people_item, getContext()));
+                    rv.setAdapter(new PeopleAdapter(results, R.layout.fragment_people_item));
                     progressBar.setVisibility(View.GONE);
                 }
             }
