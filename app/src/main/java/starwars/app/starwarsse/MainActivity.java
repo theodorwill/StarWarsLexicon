@@ -1,7 +1,6 @@
 package starwars.app.starwarsse;
 
 import android.app.FragmentManager;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,11 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
 import starwars.app.starwarsse.fragments.PlanetsFragment;
 import starwars.app.starwarsse.fragments.PeopleFragment;
 import starwars.app.starwarsse.fragments.ShipsFragment;
+import starwars.app.starwarsse.fragments.SpeciesFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -82,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fm.beginTransaction().replace(R.id.contentFrame, new PlanetsFragment()).commit();
         } else if (id == R.id.nav_ships) {
             fm.beginTransaction().replace(R.id.contentFrame, new ShipsFragment()).commit();
+        } else if (id == R.id.nav_species) {
+            fm.beginTransaction().replace(R.id.contentFrame, new SpeciesFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

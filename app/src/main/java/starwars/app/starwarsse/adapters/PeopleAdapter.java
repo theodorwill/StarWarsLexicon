@@ -30,7 +30,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
 
         public SearchViewHolder(View searchView) {
             super(searchView);
-            searchLayout = (LinearLayout) searchView.findViewById(R.id.searchLayout);
+            searchLayout = (LinearLayout)searchView.findViewById(R.id.searchLayout);
             name = (TextView)searchView.findViewById(R.id.name);
             height = (TextView)searchView.findViewById(R.id.height);
             mass = (TextView)searchView.findViewById(R.id.mass);

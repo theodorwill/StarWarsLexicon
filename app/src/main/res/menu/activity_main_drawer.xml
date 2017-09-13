@@ -14,5 +14,9 @@
             android:id="@+id/nav_ships"
             android:icon="@drawable/ic_menu_manage"
             android:title="Ships" />
+        <item
+            android:id="@+id/nav_species"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Species" />
     </group>
 </menu>
