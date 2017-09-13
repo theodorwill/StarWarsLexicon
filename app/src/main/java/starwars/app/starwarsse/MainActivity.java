@@ -1,6 +1,7 @@
 package starwars.app.starwarsse;
 
 import android.app.FragmentManager;
+import android.content.ClipData;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        setActionBarTitle("People");
         FragmentManager fm = getFragmentManager();
         fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
     }
@@ -75,18 +77,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_people) {
+            setActionBarTitle("People");
             fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
         } else if (id == R.id.nav_planets) {
+            setActionBarTitle("Planets");
             fm.beginTransaction().replace(R.id.contentFrame, new PlanetsFragment()).commit();
         } else if (id == R.id.nav_ships) {
+            setActionBarTitle("Starships");
             fm.beginTransaction().replace(R.id.contentFrame, new ShipsFragment()).commit();
         } else if (id == R.id.nav_species) {
+            setActionBarTitle("Species");
             fm.beginTransaction().replace(R.id.contentFrame, new SpeciesFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
     }
 
 

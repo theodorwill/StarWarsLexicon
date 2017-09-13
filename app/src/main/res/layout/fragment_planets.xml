@@ -13,8 +13,7 @@
         android:inputType="text"
         android:textColorHint="#eeeeee"
         android:textColor="#eeeeee"
-        android:background="#212121"
-        android:textColorHighlight="#eeeeee"/>
+        android:padding="5dp"/>
 
     <ProgressBar
         android:id="@+id/progressBar2"
