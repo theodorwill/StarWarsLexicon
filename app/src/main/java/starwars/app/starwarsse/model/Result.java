@@ -142,6 +142,9 @@ public class Result {
     @SerializedName("language")
     @Expose
     private String language;
+    @SerializedName("vehicle_class")
+    @Expose
+    private String vehicleClass;
 
     private List<String> residents = null;
 
@@ -503,5 +506,13 @@ public class Result {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getVehicleClass() {
+        return vehicleClass;
+    }
+
+    public void setVehicleClass(String vehicleClass) {
+        this.vehicleClass = vehicleClass;
     }
 }

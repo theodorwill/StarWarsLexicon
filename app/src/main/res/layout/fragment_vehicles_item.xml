@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:planet_card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vehiclesLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="3dp"
+    android:background="#212121">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/vehicle_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        planet_card_view:cardElevation="0dp"
+        planet_card_view:cardCornerRadius="10dp"
+        planet_card_view:cardBackgroundColor="#424242">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <starwars.app.starwarsse.resources.CustomTextView
+                android:id="@+id/vehicleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#ffeb3b"/>
+
+            <TextView
+                android:id="@+id/vModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vManufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vCreditCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vMaxSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vCrew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vPassengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vCargoCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vConsumables"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+            <TextView
+                android:id="@+id/vClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#eeeeee"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -20,18 +20,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import starwars.app.starwarsse.R;
-import starwars.app.starwarsse.adapters.SpeciesAdapter;
+import starwars.app.starwarsse.adapters.VehiclesAdapter;
 import starwars.app.starwarsse.api.ApiInterface;
 import starwars.app.starwarsse.model.Example;
 import starwars.app.starwarsse.model.Result;
 
 /**
- * Created by cba on 2017-09-12.
+ * Created by cba on 2017-09-13.
  */
 
-public class SpeciesFragment extends Fragment {
+public class VehiclesFragment extends Fragment {
 
-    private static final String searchUrl = "species/?search=";
+    private static final String searchUrl = "vehicles/?search=";
     private String searchResult = "";
     private RecyclerView rv;
     private EditText searchField;
@@ -39,13 +39,13 @@ public class SpeciesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_species, container, false);
-        rv = (RecyclerView)rootView.findViewById(R.id.speciesRecyclerView);
+        View rootView = inflater.inflate(R.layout.fragment_vehicles, container, false);
+        rv = (RecyclerView)rootView.findViewById(R.id.vehiclesRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        progressBar = (ProgressBar)rootView.findViewById(R.id.progressBar4);
+        progressBar = (ProgressBar)rootView.findViewById(R.id.progressBar5);
         fetchSearchResults();
 
-        searchField = (EditText)rootView.findViewById(R.id.speciesSearchBar);
+        searchField = (EditText)rootView.findViewById(R.id.vehiclesSearchBar);
         searchField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -84,7 +84,7 @@ public class SpeciesFragment extends Fragment {
             public void onResponse(Call<Example> call, Response<Example> response) {
                 if(response.isSuccessful()) {
                     List<Result> results = response.body().getResults();
-                    rv.setAdapter(new SpeciesAdapter(results, R.layout.fragment_species_item));
+                    rv.setAdapter(new VehiclesAdapter(results, R.layout.fragment_vehicles_item));
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -95,6 +95,5 @@ public class SpeciesFragment extends Fragment {
             }
         });
     }
-
-
 }
+

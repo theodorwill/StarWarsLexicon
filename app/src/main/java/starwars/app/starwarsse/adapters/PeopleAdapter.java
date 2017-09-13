@@ -1,6 +1,5 @@
 package starwars.app.starwarsse.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,7 +59,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.SearchView
         holder.eyeColor.setText("Eye color: "+results.get(position).getEyeColor());
         holder.birthYear.setText("Birth year: "+results.get(position).getBirthYear());
         holder.gender.setText("Gender: "+results.get(position).getGender());
-
     }
 
     @Override

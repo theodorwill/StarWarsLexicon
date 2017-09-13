@@ -15,6 +15,7 @@ import starwars.app.starwarsse.fragments.PlanetsFragment;
 import starwars.app.starwarsse.fragments.PeopleFragment;
 import starwars.app.starwarsse.fragments.ShipsFragment;
 import starwars.app.starwarsse.fragments.SpeciesFragment;
+import starwars.app.starwarsse.fragments.VehiclesFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -88,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_species) {
             setActionBarTitle("Species");
             fm.beginTransaction().replace(R.id.contentFrame, new SpeciesFragment()).commit();
+        } else if (id == R.id.nav_vehicles) {
+            setActionBarTitle("Vehicles");
+            fm.beginTransaction().replace(R.id.contentFrame, new VehiclesFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

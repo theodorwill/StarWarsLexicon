@@ -1,6 +1,5 @@
 package starwars.app.starwarsse.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,10 +69,6 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ShipsViewHol
         holder.hyperDRating.setText("Hyperdrive Rating: "+results.get(position).getHyperdriveRating());
         holder.mGLT.setText("MGLT: "+results.get(position).getMGLT());
         holder.starShipClass.setText("Starship Class: "+results.get(position).getStarshipClass());
-
-
-
-
     }
 
     @Override

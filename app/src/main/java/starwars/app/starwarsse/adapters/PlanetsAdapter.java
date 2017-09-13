@@ -1,6 +1,5 @@
 package starwars.app.starwarsse.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,7 +61,6 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.PlanetsV
         holder.terrain.setText("Terrain: "+results.get(position).getTerrain());
         holder.surfWater.setText("Surface water: "+results.get(position).getSurfaceWater());
         holder.population.setText("Population: "+results.get(position).getPopulation());
-
     }
 
     @Override
