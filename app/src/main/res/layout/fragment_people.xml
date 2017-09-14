@@ -15,6 +15,13 @@
         android:textColor="#eeeeee"
         android:padding="5dp"/>
 
+    <Button
+        android:id="@+id/pplButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/ic_close"
+        android:layout_gravity="end"/>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -28,8 +35,9 @@
         android:id="@+id/searchRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
         android:layout_marginTop="40dp"
-        android:background="#212121"/>
+        android:background="#212121"
+        android:scrollbars="vertical" />
+
 
 </FrameLayout>

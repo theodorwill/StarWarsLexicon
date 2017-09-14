@@ -14,15 +14,11 @@ import starwars.app.starwarsse.fragments.PlanetsFragment;
 import starwars.app.starwarsse.fragments.PeopleFragment;
 import starwars.app.starwarsse.fragments.ShipsFragment;
 import starwars.app.starwarsse.fragments.SpeciesFragment;
-import starwars.app.starwarsse.fragments.TaskFragment;
 import starwars.app.starwarsse.fragments.VehiclesFragment;
 
 
 public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener, TaskFragment.TaskCallbacks{
-
-    private static final String TAG_TASK_FRAGMENT = "task_fragment";
-    private TaskFragment mTaskFragment;
+        NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +37,8 @@ public class MainActivity extends AppCompatActivity implements
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager fm = getFragmentManager();
-        mTaskFragment = (TaskFragment) fm.findFragmentByTag(TAG_TASK_FRAGMENT);
-
-        if(mTaskFragment == null){
-            mTaskFragment = new TaskFragment();
-            fm.beginTransaction().add(mTaskFragment, TAG_TASK_FRAGMENT).commit();
-            fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
-        }
-
+        setActionBarTitle("People");
+        fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
     }
 
     @Override
@@ -115,24 +105,5 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    @Override
-    public void onPreExecute() {
-
-    }
-
-    @Override
-    public void onProgressUpdate(int percent) {
-
-    }
-
-    @Override
-    public void onCancelled() {
-
-    }
-
-    @Override
-    public void onPostExecute() {
-
-    }
 }
 

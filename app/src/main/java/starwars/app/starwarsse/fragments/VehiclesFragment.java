@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class VehiclesFragment extends Fragment {
     private RecyclerView rv;
     private EditText searchField;
     private ProgressBar progressBar;
+    private Button button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -61,6 +63,15 @@ public class VehiclesFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 searchResult = searchField.getText().toString();
                 fetchSearchResults();
+            }
+        });
+
+        button = (Button)rootView.findViewById(R.id.veButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchField.setText("");
+
             }
         });
 

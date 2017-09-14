@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:name="starwars.app.starwarsse.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

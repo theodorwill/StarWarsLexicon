@@ -6,11 +6,17 @@
     android:background="@drawable/star_sky"
     android:gravity="center" >
 
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
         android:background="@drawable/app_label" />
+
+    <ProgressBar
+        android:id="@+id/splashProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
