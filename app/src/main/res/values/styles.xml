@@ -9,12 +9,11 @@
         <item name="android:colorBackground">@color/background_material_light</item>
         <item name="android:textColorPrimary">@color/white_text</item>
         <item name="android:textColorSecondary">@color/white_text</item>
-        <item name="android:statusBarColor">@color/statusbar_gray</item>
+        <item name="android:statusBarColor">@color/status_gray</item>
         <item name="android:windowBackground">@color/windowColor</item>
-        <item name="android:alertDialogStyle">@style/CustomDialogTheme</item>
     </style>
 
-    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:bottomBright">@color/windowColor</item>
         <item name="android:bottomDark">@color/windowColor</item>
         <item name="android:bottomMedium">@color/windowColor</item>
@@ -25,7 +24,9 @@
         <item name="android:fullDark">@color/windowColor</item>
         <item name="android:topBright">@color/windowColor</item>
         <item name="android:topDark">@color/windowColor</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:divider">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/white_text</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

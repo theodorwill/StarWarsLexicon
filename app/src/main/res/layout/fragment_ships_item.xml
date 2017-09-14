@@ -16,7 +16,7 @@
         android:layout_gravity="center"
         planet_card_view:cardElevation="0dp"
         planet_card_view:cardCornerRadius="10dp"
-        planet_card_view:cardBackgroundColor="#424242">
+        planet_card_view:cardBackgroundColor="#616161">
 
         <LinearLayout
             android:layout_width="match_parent"

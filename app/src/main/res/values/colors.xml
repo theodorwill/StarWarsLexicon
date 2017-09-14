@@ -5,6 +5,7 @@
     <color name="colorAccent">#ffc107</color>
     <color name="background_material_light">#212121</color>
     <color name="white_text">#eeeeee</color>
-    <color name="statusbar_gray">#2e2e2e</color>
+    <color name="status_gray">#2e2e2e</color>
     <color name="windowColor">#424242</color>
+    <color name="brightGray">#757575</color>
 </resources>

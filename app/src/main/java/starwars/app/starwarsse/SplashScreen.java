@@ -15,15 +15,13 @@ import android.os.Bundle;
 
 public class SplashScreen extends Activity {
 
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
         if(!isNetworkAvailable()){
 
-            AlertDialog.Builder checkBuilder = new  AlertDialog.Builder(SplashScreen.this);
+            AlertDialog.Builder checkBuilder = new AlertDialog.Builder(SplashScreen.this, R.style.CustomDialogTheme);
             checkBuilder.setTitle("Error!");
             checkBuilder.setMessage("No internet Connection found!");
             checkBuilder.setCancelable(false);
@@ -43,12 +41,9 @@ public class SplashScreen extends Activity {
                 public void onClick(DialogInterface dialog, int which) {
                     finish();
                 }
-            }) ;
-
+            });
             AlertDialog alert = checkBuilder.create();
             alert.show();
-
-
         }
         else {
             if (isNetworkAvailable()){
@@ -70,7 +65,6 @@ public class SplashScreen extends Activity {
                 tr.start();
             }
         }
-
     }
 
     private boolean isNetworkAvailable(){

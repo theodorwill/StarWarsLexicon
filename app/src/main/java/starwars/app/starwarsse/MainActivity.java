@@ -1,7 +1,6 @@
 package starwars.app.starwarsse;
 
 import android.app.FragmentManager;
-import android.content.ClipData;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,15 +14,21 @@ import starwars.app.starwarsse.fragments.PlanetsFragment;
 import starwars.app.starwarsse.fragments.PeopleFragment;
 import starwars.app.starwarsse.fragments.ShipsFragment;
 import starwars.app.starwarsse.fragments.SpeciesFragment;
+import starwars.app.starwarsse.fragments.TaskFragment;
 import starwars.app.starwarsse.fragments.VehiclesFragment;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener, TaskFragment.TaskCallbacks{
+
+    private static final String TAG_TASK_FRAGMENT = "task_fragment";
+    private TaskFragment mTaskFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -35,9 +40,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        setActionBarTitle("People");
         FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
+        mTaskFragment = (TaskFragment) fm.findFragmentByTag(TAG_TASK_FRAGMENT);
+
+        if(mTaskFragment == null){
+            mTaskFragment = new TaskFragment();
+            fm.beginTransaction().add(mTaskFragment, TAG_TASK_FRAGMENT).commit();
+            fm.beginTransaction().replace(R.id.contentFrame, new PeopleFragment()).commit();
+        }
+
     }
 
     @Override
@@ -104,5 +115,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    @Override
+    public void onPreExecute() {
+
+    }
+
+    @Override
+    public void onProgressUpdate(int percent) {
+
+    }
+
+    @Override
+    public void onCancelled() {
+
+    }
+
+    @Override
+    public void onPostExecute() {
+
+    }
 }
 

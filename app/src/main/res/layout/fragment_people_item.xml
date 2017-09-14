@@ -16,7 +16,7 @@
         android:layout_gravity="center"
         ppl_card_view:cardElevation="0dp"
         ppl_card_view:cardCornerRadius="10dp"
-        ppl_card_view:cardBackgroundColor="#424242">
+        ppl_card_view:cardBackgroundColor="#616161">
 
         <LinearLayout
             android:layout_width="match_parent"
