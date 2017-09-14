@@ -22,7 +22,7 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
     public class SpeciesViewHolder extends RecyclerView.ViewHolder{
         LinearLayout speciesLayout;
         TextView speciesName, classification, designation, avgHeight, skinColors, hairColors,
-                eyeColors, avgLifeSpan, homeWorld, language;
+                eyeColors, avgLifeSpan, language;
 
         public SpeciesViewHolder(View speciesView){
             super(speciesView);
@@ -35,7 +35,6 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
             hairColors = (TextView)speciesView.findViewById(R.id.speciesHairColors);
             eyeColors = (TextView)speciesView.findViewById(R.id.speciesEyeColors);
             avgLifeSpan = (TextView)speciesView.findViewById(R.id.avgLifespan);
-            homeWorld = (TextView)speciesView.findViewById(R.id.homeWorld);
             language = (TextView)speciesView.findViewById(R.id.language);
         }
     }
@@ -61,7 +60,6 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
         holder.hairColors.setText("Hair colors: "+results.get(position).getHairColors());
         holder.eyeColors.setText("Eye colors: "+results.get(position).getEyeColors());
         holder.avgLifeSpan.setText("Average lifespan: "+results.get(position).getAverageLifespan());
-        holder.homeWorld.setText("Home world: "+results.get(position).getHomeworld());
         holder.language.setText("Language: "+results.get(position).getLanguage());
     }
 

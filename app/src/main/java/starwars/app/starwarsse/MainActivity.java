@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements
         } else if (id == R.id.nav_vehicles) {
             setActionBarTitle("Vehicles");
             fm.beginTransaction().replace(R.id.contentFrame, new VehiclesFragment()).commit();
+        } else if (id == R.id.nav_close) {
+            finish();
+            System.exit(0);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

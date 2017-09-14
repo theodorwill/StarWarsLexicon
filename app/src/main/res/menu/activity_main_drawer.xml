@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_people"
             android:icon="@drawable/ic_person"
@@ -23,4 +25,14 @@
             android:icon="@drawable/ic_directions_car"
             android:title="Vehicles" />
     </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_close"
+            android:icon="@drawable/ic_close"
+            android:title="Close app" />
+    </group>
+
 </menu>
