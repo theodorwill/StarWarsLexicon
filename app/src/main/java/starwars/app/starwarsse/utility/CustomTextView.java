@@ -1,4 +1,4 @@
-package starwars.app.starwarsse.resources;
+package starwars.app.starwarsse.utility;
 
 import android.content.Context;
 import android.graphics.Typeface;

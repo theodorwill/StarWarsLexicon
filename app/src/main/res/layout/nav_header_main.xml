@@ -12,7 +12,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <starwars.app.starwarsse.resources.CustomTextView
+    <starwars.app.starwarsse.utility.CustomTextView
         android:id="@+id/navMenuTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

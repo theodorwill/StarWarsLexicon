@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
 
 /**
  * Created by cba on 2017-09-13.
@@ -17,7 +15,7 @@ import android.widget.ProgressBar;
 
 public class SplashScreen extends Activity {
 
-    private ProgressBar progressBar;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +47,7 @@ public class SplashScreen extends Activity {
 
             AlertDialog alert = checkBuilder.create();
             alert.show();
-            progressBar.setVisibility(View.GONE);
+
 
         }
         else {
@@ -77,10 +75,7 @@ public class SplashScreen extends Activity {
 
     private boolean isNetworkAvailable(){
         ConnectivityManager manager =(ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo connection = manager.getActiveNetworkInfo();
-        if(connection != null && connection.isConnectedOrConnecting()){
-            return true;
-        }
-        return false;
+        NetworkInfo info = manager.getActiveNetworkInfo();
+        return info != null;
     }
 }

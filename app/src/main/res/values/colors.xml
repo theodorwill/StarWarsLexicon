@@ -6,4 +6,5 @@
     <color name="background_material_light">#212121</color>
     <color name="white_text">#eeeeee</color>
     <color name="statusbar_gray">#2e2e2e</color>
+    <color name="windowColor">#424242</color>
 </resources>

@@ -10,6 +10,22 @@
         <item name="android:textColorPrimary">@color/white_text</item>
         <item name="android:textColorSecondary">@color/white_text</item>
         <item name="android:statusBarColor">@color/statusbar_gray</item>
+        <item name="android:windowBackground">@color/windowColor</item>
+        <item name="android:alertDialogStyle">@style/CustomDialogTheme</item>
+    </style>
+
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:bottomBright">@color/windowColor</item>
+        <item name="android:bottomDark">@color/windowColor</item>
+        <item name="android:bottomMedium">@color/windowColor</item>
+        <item name="android:centerBright">@color/windowColor</item>
+        <item name="android:centerDark">@color/windowColor</item>
+        <item name="android:centerMedium">@color/windowColor</item>
+        <item name="android:fullBright">@color/windowColor</item>
+        <item name="android:fullDark">@color/windowColor</item>
+        <item name="android:topBright">@color/windowColor</item>
+        <item name="android:topDark">@color/windowColor</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
