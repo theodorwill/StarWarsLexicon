@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import starwars.app.starwarsse.fragments.PlanetsFragment;
 import starwars.app.starwarsse.fragments.PeopleFragment;
 import starwars.app.starwarsse.fragments.ShipsFragment;
@@ -18,7 +19,7 @@ import starwars.app.starwarsse.fragments.VehiclesFragment;
 
 
 public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener{
+        NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-    public void setActionBarTitle(String title){
+    public void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);
     }
 

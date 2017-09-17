@@ -19,7 +19,7 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
-        if(!isNetworkAvailable()){
+        if (!isNetworkAvailable()) {
 
             AlertDialog.Builder checkBuilder = new AlertDialog.Builder(SplashScreen.this, R.style.CustomDialogTheme);
             checkBuilder.setTitle("Error!");
@@ -44,20 +44,17 @@ public class SplashScreen extends Activity {
             });
             AlertDialog alert = checkBuilder.create();
             alert.show();
-        }
-        else {
-            if (isNetworkAvailable()){
+        } else {
+            if (isNetworkAvailable()) {
 
-                Thread tr=new Thread(){
-                    public  void  run(){
+                Thread tr = new Thread() {
+                    public void run() {
                         try {
                             sleep(3000);
-                        }
-                        catch (Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
-                        }
-                        finally {
-                            startActivity(new Intent(SplashScreen.this,MainActivity.class));
+                        } finally {
+                            startActivity(new Intent(SplashScreen.this, MainActivity.class));
                             finish();
                         }
                     }
@@ -67,8 +64,8 @@ public class SplashScreen extends Activity {
         }
     }
 
-    private boolean isNetworkAvailable(){
-        ConnectivityManager manager =(ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = manager.getActiveNetworkInfo();
         return info != null;
     }

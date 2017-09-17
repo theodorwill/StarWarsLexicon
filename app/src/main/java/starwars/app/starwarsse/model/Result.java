@@ -4,9 +4,10 @@ package starwars.app.starwarsse.model;
  * Created by cba on 2017-08-28.
  */
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Result {
 

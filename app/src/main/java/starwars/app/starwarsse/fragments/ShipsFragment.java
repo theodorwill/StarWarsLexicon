@@ -14,7 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,12 +44,12 @@ public class ShipsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_ships, container, false);
-        rv = (RecyclerView)rootView.findViewById(R.id.shipRecyclerView);
+        rv = (RecyclerView) rootView.findViewById(R.id.shipRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        progressBar = (ProgressBar)rootView.findViewById(R.id.progressBar3);
+        progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar3);
         fetchSearchResults();
 
-        searchField = (EditText)rootView.findViewById(R.id.shipSearchBar);
+        searchField = (EditText) rootView.findViewById(R.id.shipSearchBar);
         searchField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -66,7 +68,7 @@ public class ShipsFragment extends Fragment {
             }
         });
 
-        button = (Button)rootView.findViewById(R.id.shipButton);
+        button = (Button) rootView.findViewById(R.id.shipButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +80,7 @@ public class ShipsFragment extends Fragment {
         return rootView;
     }
 
-    public void fetchSearchResults(){
+    public void fetchSearchResults() {
 
         progressBar.setVisibility(View.VISIBLE);
 
@@ -89,16 +91,17 @@ public class ShipsFragment extends Fragment {
 
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
 
-        Call<Example> call = apiInterface.getSearchResult(searchUrl+searchResult);
+        Call<Example> call = apiInterface.getSearchResult(searchUrl + searchResult);
         call.enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     List<Result> results = response.body().getResults();
                     rv.setAdapter(new ShipsAdapter(results, R.layout.fragment_ships_item));
                     progressBar.setVisibility(View.GONE);
                 }
             }
+
             @Override
             public void onFailure(Call<Example> call, Throwable t) {
                 Toast.makeText(getActivity(), "API call failed", Toast.LENGTH_SHORT).show();

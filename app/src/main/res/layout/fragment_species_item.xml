@@ -4,19 +4,19 @@
     android:id="@+id/speciesLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#212121"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="3dp"
-    android:background="#212121">
+    android:padding="3dp">
 
     <android.support.v7.widget.CardView
         android:id="@+id/species_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        planet_card_view:cardElevation="0dp"
+        planet_card_view:cardBackgroundColor="#616161"
         planet_card_view:cardCornerRadius="10dp"
-        planet_card_view:cardBackgroundColor="#616161">
+        planet_card_view:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,64 +29,64 @@
                 android:id="@+id/speciesName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textColor="#ffeb3b"/>
+                android:textColor="#ffeb3b"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/classification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/designation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/avgHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/speciesSkinColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/speciesHairColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/speciesEyeColors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/avgLifespan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/language"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#eeeeee"/>
+                android:textColor="#eeeeee"
+                android:textSize="20sp" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

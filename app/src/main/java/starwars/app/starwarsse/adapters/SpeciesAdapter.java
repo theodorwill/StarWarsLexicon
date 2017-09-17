@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.List;
+
 import starwars.app.starwarsse.R;
 import starwars.app.starwarsse.model.Result;
 
@@ -19,27 +21,27 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
     private List<Result> results;
     private int rowLayout;
 
-    public class SpeciesViewHolder extends RecyclerView.ViewHolder{
+    public class SpeciesViewHolder extends RecyclerView.ViewHolder {
         LinearLayout speciesLayout;
         TextView speciesName, classification, designation, avgHeight, skinColors, hairColors,
                 eyeColors, avgLifeSpan, language;
 
-        public SpeciesViewHolder(View speciesView){
+        public SpeciesViewHolder(View speciesView) {
             super(speciesView);
-            speciesLayout = (LinearLayout)speciesView.findViewById(R.id.speciesLayout);
-            speciesName = (TextView)speciesView.findViewById(R.id.speciesName);
-            classification = (TextView)speciesView.findViewById(R.id.classification);
-            designation = (TextView)speciesView.findViewById(R.id.designation);
-            avgHeight = (TextView)speciesView.findViewById(R.id.avgHeight);
-            skinColors = (TextView)speciesView.findViewById(R.id.speciesSkinColors);
-            hairColors = (TextView)speciesView.findViewById(R.id.speciesHairColors);
-            eyeColors = (TextView)speciesView.findViewById(R.id.speciesEyeColors);
-            avgLifeSpan = (TextView)speciesView.findViewById(R.id.avgLifespan);
-            language = (TextView)speciesView.findViewById(R.id.language);
+            speciesLayout = (LinearLayout) speciesView.findViewById(R.id.speciesLayout);
+            speciesName = (TextView) speciesView.findViewById(R.id.speciesName);
+            classification = (TextView) speciesView.findViewById(R.id.classification);
+            designation = (TextView) speciesView.findViewById(R.id.designation);
+            avgHeight = (TextView) speciesView.findViewById(R.id.avgHeight);
+            skinColors = (TextView) speciesView.findViewById(R.id.speciesSkinColors);
+            hairColors = (TextView) speciesView.findViewById(R.id.speciesHairColors);
+            eyeColors = (TextView) speciesView.findViewById(R.id.speciesEyeColors);
+            avgLifeSpan = (TextView) speciesView.findViewById(R.id.avgLifespan);
+            language = (TextView) speciesView.findViewById(R.id.language);
         }
     }
 
-    public SpeciesAdapter(List<Result> results, int rowLayout){
+    public SpeciesAdapter(List<Result> results, int rowLayout) {
         this.results = results;
         this.rowLayout = rowLayout;
     }
@@ -53,14 +55,14 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.SpeciesV
     @Override
     public void onBindViewHolder(SpeciesAdapter.SpeciesViewHolder holder, int position) {
         holder.speciesName.setText(results.get(position).getName());
-        holder.classification.setText("Classification: "+results.get(position).getClassification());
-        holder.designation.setText("Designation: "+results.get(position).getDesignation());
-        holder.avgHeight.setText("Average height: "+results.get(position).getAverageHeight());
-        holder.skinColors.setText("Skin colors: "+results.get(position).getSkinColors());
-        holder.hairColors.setText("Hair colors: "+results.get(position).getHairColors());
-        holder.eyeColors.setText("Eye colors: "+results.get(position).getEyeColors());
-        holder.avgLifeSpan.setText("Average lifespan: "+results.get(position).getAverageLifespan());
-        holder.language.setText("Language: "+results.get(position).getLanguage());
+        holder.classification.setText("Classification: " + results.get(position).getClassification());
+        holder.designation.setText("Designation: " + results.get(position).getDesignation());
+        holder.avgHeight.setText("Average height: " + results.get(position).getAverageHeight());
+        holder.skinColors.setText("Skin colors: " + results.get(position).getSkinColors());
+        holder.hairColors.setText("Hair colors: " + results.get(position).getHairColors());
+        holder.eyeColors.setText("Eye colors: " + results.get(position).getEyeColors());
+        holder.avgLifeSpan.setText("Average lifespan: " + results.get(position).getAverageLifespan());
+        holder.language.setText("Language: " + results.get(position).getLanguage());
     }
 
     @Override
